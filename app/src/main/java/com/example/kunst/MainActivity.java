@@ -19,39 +19,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button Login;
     ImageView Logo;
     String logo_url = "https://api.sonnymijael.com/v1/kusnt/resources/logo.png";
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // header get color
+        // Set header color
         ActionBar actionBar;
         actionBar = getSupportActionBar();
-
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.actionbar));
 
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#557C83"));
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        Button Login = (Button) findViewById(R.id.login);
-        ImageView Logo = (ImageView) findViewById(R.id.logo);
+        Logo = (ImageView) findViewById(R.id.logo);
+        Picasso.get().load(logo_url).into(Logo);
 
+        Login = (Button) findViewById(R.id.login);
         Login.setOnClickListener(this);
 
-        Picasso.get().load(logo_url).into(Logo);
+        intent = new Intent();
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.login:
+                    intent.setClass(this, Login.class);
+                    startActivity(intent);
                     Toast.makeText(this, "Inicio session correctamente", Toast.LENGTH_LONG).show();
                 break;
         }
-    }
-
-    public String handleDistance(String longitud, String latitud) {
-        return longitud + latitud;
     }
 }
