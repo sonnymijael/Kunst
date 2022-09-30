@@ -6,9 +6,65 @@
     android:layout_height="match_parent"
     android:background="@color/bg_light"
     tools:context=".Login">
-    <TextView
+
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:text="Login"/>
+        android:layout_marginTop="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="10dp"
+        android:text="Bienvenido! \n Ingresa tu correo y tu contraseña."
+        android:textAlignment="center"
+        android:textColor="@color/primary"
+        android:textSize="40px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_below="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:backgroundTint="@color/primary"
+        android:layout_marginHorizontal="60dp"
+        android:paddingHorizontal="60dp"
+        android:textAlignment="center"
+        android:hint="Correo"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_below="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="60dp"
+        android:paddingHorizontal="60dp"
+        android:textAlignment="center"
+        android:hint="Contraseña"/>
+    <Button
+        android:id="@+id/ingresar"
+        android:layout_below="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="60dp"
+        android:paddingHorizontal="60dp"
+        android:textAlignment="center"
+        android:text="ingresar"/>
+
+
+
+
 </RelativeLayout>
