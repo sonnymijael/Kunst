@@ -11,12 +11,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button Login;
+public class Login extends AppCompatActivity implements View.OnClickListener {
+    Button Ingresar;
     ImageView Logo;
     String logo_url = "https://api.sonnymijael.com/v1/kusnt/resources/logo.png";
     Intent intent;
@@ -24,8 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_login);
         // Set header color
         ActionBar actionBar;
         actionBar = getSupportActionBar();
@@ -37,20 +35,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Logo = (ImageView) findViewById(R.id.logo);
         Picasso.get().load(logo_url).into(Logo);
 
-        Login = (Button) findViewById(R.id.login);
-        Login.setOnClickListener(this);
+        Ingresar = (Button) findViewById(R.id.ingresar);
+        Ingresar.setOnClickListener(this);
 
         intent = new Intent();
+
+        setTitle("Sign In");
+    }
+
+    public boolean register_customer(){
+        return false;
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.login:
-                    intent.setClass(this, Login.class);
-                    startActivity(intent);
-                    Toast.makeText(this, "Inicio session correctamente", Toast.LENGTH_LONG).show();
-                break;
-        }
+
     }
 }
