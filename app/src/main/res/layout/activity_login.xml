@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         android:layout_marginTop="10dp"
-        android:text="Bienvenido! \n Ingresa tu correo y tu contraseña."
+        android:text="¡Bienvenido! \n Ingresa tu correo y tu contraseña."
         android:textAlignment="center"
         android:textColor="@color/primary"
         android:textSize="40px"
