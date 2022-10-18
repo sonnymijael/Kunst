@@ -57,14 +57,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         btnlogin.setOnClickListener(this);
         btnregresar.setOnClickListener(this);
         setTitle("Sign In");
-
-        //evento del btn para ingresar
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validarUsuario("");//url del php de la base de datos
-            }
-        });
     }
     private void validarUsuario(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL,
@@ -82,7 +74,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 Toast.makeText(Login.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){
