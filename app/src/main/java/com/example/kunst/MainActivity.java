@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#557C83"));
         actionBar.setBackgroundDrawable(colorDrawable);
 
-        Logo = (ImageView) findViewById(R.id.logo);
+        Logo = findViewById(R.id.logo);
         Picasso.get().load(logo_url).into(Logo);
 
-        Login = (Button) findViewById(R.id.login);
+        Login = findViewById(R.id.login);
         Login.setOnClickListener(this);
 
         intent = new Intent();
